@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Vision Test</title>
+  <style>
+    body {
+      background-color: #505050;
+    }
+    
+    #color-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .color-box {
+      display: inline-block;
+      width: 128px;
+      height: 128px;
+      margin: 8px;
+      border: 8px solid black;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .swap-animation {
+      transition: transform 0.2s;
+    }
+
+    #score-container {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      padding: 10px 12px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #333;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Color Vision Test</h1>
+  <div>
+    <label for="static-colors">Static Colors:</label>
+    <input type="text" id="static-colors" value="0,10" />
+    <input type="text" id="static-saturation" value="100" />
+    <input type="text" id="static-lightness" value="50" />
+  </div>
+  <div>
+    <label for="num-random-colors">Number of Colors:</label>
+    <input type="number" id="num-random-colors" value="10" />
+  </div>
+  <button onclick="startGame()">Start Game</button>
+  <div id="color-container"></div>
+  <button onclick="calculateScore()">Calculate Score</button>
+  <div id="score"></div>
+  <div id="color-container"></div>
+  <div id="score-container"></div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
